@@ -10,13 +10,6 @@ echo "域名: nurokmail.com"
 echo "服务器: nurokmail.com"
 echo ""
 
-# 检查是否为 root 用户
-if [ "$EUID" -eq 0 ]; then
-    echo "请不要使用 root 用户运行此脚本"
-    echo "请使用普通用户运行，脚本会在需要时使用 sudo"
-    exit 1
-fi
-
 # 更新系统包
 echo "1. 更新系统包..."
 sudo apt update && sudo apt upgrade -y
