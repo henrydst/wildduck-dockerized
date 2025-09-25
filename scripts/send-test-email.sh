@@ -13,7 +13,7 @@ curl -X POST "$API_URL/users/$USER_ID/submit" \
 -H "X-Access-Token: $ACCESS_TOKEN" \
 -d '{
   "from": "testuser@nurokmail.com",
-  "to": ["your-email@gmail.com"],
+  "to": ["rminer.z.c@gmail.com"],
   "subject": "Wildduck邮件服务器测试",
   "text": "这是一封来自Wildduck邮件服务器的测试邮件。\n\n如果您收到这封邮件，说明邮件服务器配置成功！\n\n发送时间: '$(date)'"
 }'
