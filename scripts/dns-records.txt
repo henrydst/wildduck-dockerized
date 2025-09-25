@@ -1,0 +1,38 @@
+# DNS Records for nurokmail.com
+# 需要配置的DNS记录
+
+## 1. MX记录 (邮件交换记录)
+名称: @
+类型: MX
+值: nurokmail.com
+优先级: 5
+
+# 2️⃣ SPF 记录（TXT，发件人策略）
+名称: @
+类型: TXT
+值: "v=spf1 ip4:98.89.220.169 ~all"
+
+# 3️⃣ DKIM 记录（TXT，数字签名）
+名称: wd2025._domainkey
+类型: TXT
+值: "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/lU1Mr/62gWP2aJa6z5sMk6IQEKeWCQZBQDAA3+HR7XCN066Vo32Mg46YmMS3m5HAAYoL2Cbr8qpDLzY9umslWO0y6dwMkVFkYl2PDgwsKArQY5sdR/JRr1Te1O9Xlkubk4NRDs7kZ5+Aq9DW+xt8PjO9aVoXExC00xShqncvCQIDAQAB"
+
+# 4️⃣ DMARC 记录（TXT，域名邮件认证）
+名称: _dmarc
+类型: TXT
+值: "v=DMARC1; p=quarantine; rua=mailto:admin@nurokmail.com; ruf=mailto:admin@nurokmail.com; fo=1"
+
+# 5️⃣ A 记录（域名解析到服务器 IP）
+名称: @
+类型: A
+值: 98.89.220.169
+
+# 6️⃣ 可选子域名 A 记录（用于 Webmail 或 SMTP/IMAP）
+类型: A
+名称: mail
+值: 98.89.220.169
+
+## 配置说明
+1. 在DNS提供商控制面板中添加这些记录
+2. DNS传播时间: 5分钟到24小时
+3. 配置完成后运行验证脚本检查
