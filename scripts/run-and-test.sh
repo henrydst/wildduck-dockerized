@@ -17,4 +17,6 @@
     curl -X GET "http://127.0.0.1:8080/users/68d12dc0f7653bc66e11619d/mailboxes" -H 'Content-type: application/json' -H 'X-Access-Token: EqqZZYzks554Q5lhkhKj69l3aUNsYQ'
     curl -X GET "http://127.0.0.1:8080/users/68d4c1c4f7653bc66e1161b3/mailboxes" -H 'Content-type: application/json' -H 'X-Access-Token: EqqZZYzks554Q5lhkhKj69l3aUNsYQ'
 
+    #读取邮件
+    curl -X GET "http://127.0.0.1:8080/users/68d12dc0f7653bc66e11619d/mailboxes/68d12dc0f7653bc66e11619e/messages" -H 'Content-type: application/json' -H 'X-Access-Token: EqqZZYzks554Q5lhkhKj69l3aUNsYQ'
 

@@ -32,6 +32,20 @@
 名称: mail
 值: 98.89.220.169
 
+
+7.  修改 PTR（最佳方案）
+
+    让反向 DNS 指向你的邮件域名（推荐 mail.nurokmail.com 或 nurokmail.com）。
+
+    因为你是在 AWS EC2：
+
+    登录 AWS 控制台 → EC2 → Elastic IP（如果你用弹性 IP）。
+
+    修改 Reverse DNS / PTR → 指向 mail.nurokmail.com。
+
+    注意：AWS 只有绑定弹性 IP 才能修改 PTR，普通动态 IP 不支持。
+
+
 ## 配置说明
 1. 在DNS提供商控制面板中添加这些记录
 2. DNS传播时间: 5分钟到24小时
