@@ -75,6 +75,12 @@ else
 fi
 echo ""
 
+# AWS Route53 的特点
+# Route53 的 SOA 记录 是自动生成的，不能手动修改。
+# Amazon 自己用一个简单的序列号（比如 1），而不是 YYYYMMDDNN。
+# 所以你不能直接改它，MXToolbox 只能报 Warning。
+# 这不影响正常收发邮件。
+# 所有用 Route53 的域名都会报这个 Warning。
 echo "7. 检查SOA记录和Serial Number格式..."
 SOA_RECORD=$(dig +short $DOMAIN SOA)
 if [ -n "$SOA_RECORD" ]; then
@@ -116,7 +122,7 @@ if [ -n "$PTR_RECORD" ]; then
     
     # 尝试连接SMTP服务器并获取banner
     echo "正在连接SMTP服务器获取banner..."
-    SMTP_BANNER=$(timeout 10 telnet $SERVER_IP 25 2>/dev/null | head -1 | grep -o '[a-zA-Z0-9.-]*' | head -1)
+    SMTP_BANNER=$(timeout 120 telnet $SERVER_IP 25 2>/dev/null | head -1 | grep -o '[a-zA-Z0-9.-]*' | head -1)
     
     if [ -n "$SMTP_BANNER" ]; then
         echo "SMTP Banner: $SMTP_BANNER"
