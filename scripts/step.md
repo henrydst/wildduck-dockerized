@@ -2,8 +2,6 @@
     cert.sh
 2. configure dns Records
    dns-records.txt 
-3. modify haraka smtp.ini, add
-   banner = nurokmail.com ESMTP WildDuck MX
 3. open server port
     25 - SMTP (send mail)
     465 - SMTP SSL (safe send mail)
