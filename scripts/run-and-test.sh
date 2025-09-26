@@ -20,3 +20,4 @@
     #读取邮件
     curl -X GET "http://127.0.0.1:8080/users/68d12dc0f7653bc66e11619d/mailboxes/68d12dc0f7653bc66e11619e/messages" -H 'Content-type: application/json' -H 'X-Access-Token: EqqZZYzks554Q5lhkhKj69l3aUNsYQ'
 
+    curl  -X GET -H "X-Access-Token: EqqZZYzks554Q5lhkhKj69l3aUNsYQ" -H 'Content-type: application/json' http://localhost:8080/users
